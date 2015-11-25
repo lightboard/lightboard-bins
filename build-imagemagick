@@ -2,9 +2,12 @@
 
 DIR=$( cd "$( dirname "$0" )" &&  pwd )
 
-mkdir -p ~/im-build
+sudo apt-get install ghostscript libgs-dev gs-esp liblcms2-2 liblcms2-dev
 
-curl http://www.imagemagick.org/download/ImageMagick-6.9.2-6.tar.gz | tar xzvf ~/im-build
+mkdir -p ~/im-build
+cd ~/im-build
+
+curl http://www.imagemagick.org/download/ImageMagick-6.9.2-6.tar.gz | tar xzv
 
 cd ~/im-build/ImageMagick-6.9.2-6
 
