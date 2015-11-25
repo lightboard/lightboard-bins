@@ -1,0 +1,20 @@
+#! /bin/bash
+
+DIR=$( cd "$( dirname "$0" )" &&  pwd )
+
+mkdir -p ~/im-build
+
+curl http://www.imagemagick.org/download/ImageMagick-6.9.2-6.tar.gz | tar xzvf ~/im-build
+
+cd ~/im-build/ImageMagick-6.9.2-6
+
+./configure --with-gslib=yes --enable-shared=no --prefix=$HOME/im-build-out
+make 
+sudo make install
+cd ~/im-build-out
+
+# need configure.xml on heroku
+sudo cp share/doc/ImageMagick-6/www/source/configure.xml etc/ImageMagick-6/
+
+tar -czvf $DIR/imagemagick.6.9.2.tgz bin etc lib
+
