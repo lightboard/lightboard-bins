@@ -19,5 +19,8 @@ cd ~/im-build-out
 # need configure.xml on heroku
 sudo cp share/doc/ImageMagick-6/www/source/configure.xml etc/ImageMagick-6/
 
+# patched delegates.xml
+sudo cp $DIR/delegates.xml etc/ImageMagick-6/
+
 tar -czvf $DIR/imagemagick.6.9.2.tgz bin etc lib
 
