@@ -1,0 +1,18 @@
+" Press ? for help
+
+.. (up a dir)
+</im/etc/ImageMagick-6/
+  coder.xml
+  colors.xml
+  configure.xml
+  delegates.xml
+  log.xml
+  magic.xml
+  mime.xml
+  policy.xml
+  quantization-table.xml
+  thresholds.xml
+  type-dejavu.xml
+  type-ghostscript.xml
+  type-windows.xml
+  type.xml
