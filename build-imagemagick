@@ -11,7 +11,7 @@ curl http://www.imagemagick.org/download/ImageMagick-6.9.2-6.tar.gz | tar xzv
 
 cd ~/im-build/ImageMagick-6.9.2-6
 
-./configure --with-gslib=yes --enable-shared=no --prefix=$HOME/im-build-out
+./configure --enable-shared=no --prefix=$HOME/im-build-out
 make 
 sudo make install
 cd ~/im-build-out
