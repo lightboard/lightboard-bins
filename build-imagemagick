@@ -2,7 +2,7 @@
 
 DIR=$( cd "$( dirname "$0" )" &&  pwd )
 
-sudo apt-get install ghostscript libgs-dev gs-esp liblcms2-2 liblcms2-dev
+sudo apt-get install ghostscript libgs-dev gs-esp liblcms2-2 liblcms2-dev librsvg2-2 librsvg2-dev libxml2-dev libfreetype6-dev
 
 mkdir -p ~/im-build
 cd ~/im-build
@@ -11,7 +11,7 @@ curl http://www.imagemagick.org/download/ImageMagick-6.9.2-6.tar.gz | tar xzv
 
 cd ~/im-build/ImageMagick-6.9.2-6
 
-./configure --enable-shared=no --prefix=$HOME/im-build-out
+./configure --with-rsvg=yes --enable-shared=no --prefix=$HOME/im-build-out
 make 
 sudo make install
 cd ~/im-build-out
@@ -19,5 +19,9 @@ cd ~/im-build-out
 # need configure.xml on heroku
 sudo cp share/doc/ImageMagick-6/www/source/configure.xml etc/ImageMagick-6/
 
+# patched delegates.xml
+#sudo cp $DIR/delegates.xml etc/ImageMagick-6/
+
 tar -czvf $DIR/imagemagick.6.9.2.tgz bin etc lib
+
 
